@@ -98,3 +98,30 @@ function addToCartDirect(id) {
     });
 }
 
+/* MOBILE MENU */
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
+
+/* INIT */
+loadProducts();
+updateCartCount();
+
+/* SHOW / HIDE SECTIONS */
+function showProducts() {
+  document.getElementById("hero").classList.add("hidden");
+  document.getElementById("features").classList.add("hidden");
+  document.getElementById("productSection").classList.remove("hidden");
+}
+
+function showHome() {
+  document.getElementById("hero").classList.remove("hidden");
+  document.getElementById("features").classList.remove("hidden");
+  document.getElementById("productSection").classList.remove("hidden");
+}
+/* MOBILE MENU */
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
