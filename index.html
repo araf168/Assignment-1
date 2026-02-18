@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SwiftCart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f8f9fb]">
+    <!--NAVBAR -->
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+
+            <h1 class="text-xl md:text-2xl font-bold text-indigo-600">
+                SwiftCart
+            </h1>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 font-medium">
+                <a href="#" onclick="showHome()">
+                    <li class="hover:text-indigo-600 cursor-pointer">Home</li>
+                </a>
+                <a href="#" onclick="showProducts()">
+                    <li class="hover:text-indigo-600 cursor-pointer">Products</li>
+                </a>
+                <li class="hover:text-indigo-600 cursor-pointer">About</li>
+                <li class="hover:text-indigo-600 cursor-pointer">Contact</li>
+            </ul>
+
+            <!-- Right -->
+            <!-- CART (Desktop only) -->
+            <button onclick="openCartModal()" class="relative hidden md:block">
+                <img width="36" height="36" src="https://img.icons8.com/emoji/48/shopping-cart-emoji.png" alt="cart" />
+
+                <!-- Cart Count -->
+                <span id="cartCount"
+                    class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs px-2 rounded-full">
+                    0
+                </span>
+            </button>
+
+            <!-- MENU ICON (Mobile only) -->
+            <button onclick="toggleMenu()" class="md:hidden">
+                <img width="32" height="32" src="https://img.icons8.com/ios/50/menu--v1.png" alt="menu" />
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+         <!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden flex-col md:hidden bg-white shadow p-4 absolute top-full right-0 w-48 rounded">
+  <a href="#" onclick="showHome(); toggleMenu()"
+     class="block py-2 px-4 hover:bg-gray-100">Home</a>
+  <a href="#" onclick="showProducts(); toggleMenu()"
+     class="block py-2 px-4 hover:bg-gray-100">Products</a>
+  <a href="#" onclick="toggleMenu()"
+     class="block py-2 px-4 hover:bg-gray-100">About</a>
+  <a href="#" onclick="toggleMenu()"
+     class="block py-2 px-4 hover:bg-gray-100">Contact</a>
+</div>
+
+        <!-- <div id="mobileMenu" class="hidden md:hidden bg-white px-6 pb-4 space-y-3">
+            <a href="index.html" class="block font-medium hover:text-indigo-600">Home</a>
+            <a href="#products" class="block font-medium hover:text-indigo-600">Products</a>
+            <a href="#" class="block font-medium hover:text-indigo-600">About</a>
+            <a href="#" class="block font-medium hover:text-indigo-600">Contact</a>
+        </div> -->
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="relative h-[60vh] md:h-[75vh]">
+        <img src="Assets/banner-image.png" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <div class="relative z-10 h-full flex items-center max-w-7xl mx-auto px-6">
+            <div class="text-white max-w-xl">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Best Collection For You</h2>
+                <p class="text-gray-200 mb-6">Discover handpicked products, where quality meets style. <br>Explore the
+                    latest trends, premium designs, and exclusive picks all in one place.</p>
+                <button class="bg-indigo-600 px-6 py-3 rounded font-semibold">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section id="features" class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-2">Why Choose Us</h2>
+            <p class="text-gray-500 mb-12">We provide the best shopping experience.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="flex flex-col items-center text-center gap-2 p-4 bg-gray-50 rounded-xl shadow">
+                    <img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/fast-delivery.png"
+                        alt="fast-delivery" />
+                    <h3 class="font-semibold">Fast Delivery</h3>
+                    <p class="text-sm text-gray-500">Quick and reliable delivery to your door.</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-2 p-4 bg-gray-50 rounded-xl shadow">
+                    <img width="50" height="50" src="https://img.icons8.com/ios/50/online-support--v1.png"
+                        alt="online-support--v1" />
+                    <h3 class="font-semibold">24/7 Support</h3>
+                    <p class="text-sm text-gray-500">Always here to help, anytime.</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-2 p-4 bg-gray-50 rounded-xl shadow">
+                    <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/card-security.png"
+                        alt="card-security" />
+                    <h3 class="font-semibold">Secure Payment</h3>
+                    <p class="text-sm text-gray-500">Safe and encrypted transactions.</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-2 p-4 bg-gray-50 rounded-xl shadow">
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/return.png" alt="return" />
+                    <h3 class="font-semibold">Easy Returns</h3>
+                    <p class="text-sm text-gray-500">Hassle-free 30-day returns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+    <section id="productSection" id="products" class="max-w-7xl mx-auto px-6 pb-20">
+        <h2 class="text-3xl font-bold mb-8 hidden md:block">Trending Now</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center md:hidden">Our Products</h2>
+        <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- ================= MODAL ================= -->
+    <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center">
+        <div class="bg-white p-6 rounded max-w-md w-full">
+            <h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
+            <p id="modalDesc" class="text-sm text-gray-600 mb-4"></p>
+            <p id="modalPrice" class="font-bold mb-4"></p>
+            <button onclick="addToCart()" class="bg-indigo-600 text-white px-4 py-2 rounded">Add to Cart</button>
+            <button onclick="closeModal()" class="ml-3 text-gray-500">Close</button>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[#1f2937] text-gray-400 pt-16 pb-6">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-white text-xl font-bold">SwiftCart</h3>
+                <p class="text-sm text-xl mt-2">Your one-stop online shop for the best products and deals. Quality
+                    Products,
+                    fast delivery and excellent support.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-2">Quick Links</h4>
+                Home<br>Products<br>About<br>Contact
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-2">Support</h4>
+                FAQ<br>Shipping<br>Returns
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-2">SUBSCRIBE TO OUR NEWSLETTER</h4>
+                <P class="mb-3 text-xl">Sign up to get the latest updates, offers, and exclusive deals straight to your
+                    inbox.
+                </P>
+                <div class="max-w-md mx-auto px-4">
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input class="flex-1 px-3 py-2 rounded border border-gray-300 text-black w-full"
+                            placeholder="Enter Your Email" />
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded font-semibold w-full sm:w-auto">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <!-- Copyright -->
+            <p class="text-xl text-center sm:text-left">
+                © 2025 SwiftCart, Inc. All rights reserved.
+            </p>
+
+            <!-- Social Icons -->
+            <div class="flex gap-3">
+                <a href="https://www.facebook.com">
+                    <img class="w-6 h-6" src="https://img.icons8.com/ios-glyphs/30/facebook-new.png" alt="Facebook" />
+                </a>
+                <a href="https://www.Instagram.com">
+                    <img class="w-5 h-5" src="https://img.icons8.com/ios-glyphs/30/instagram-new.png" alt="Instagram" />
+                </a>
+                <a href="https://www.twitter.com">
+                    <img class="w-5 h-5" src="https://img.icons8.com/ios-glyphs/30/twitter.png" alt="Twitter" />
+                </a>
+                <a href="https://www.github.com">
+                    <img class="w-5 h-5" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="GitHub" />
+                </a>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
