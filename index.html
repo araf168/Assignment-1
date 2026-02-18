@@ -28,12 +28,11 @@
                 <li class="hover:text-indigo-600 cursor-pointer">Contact</li>
             </ul>
 
-            <!-- Right -->
             <!-- CART (Desktop only) -->
             <button onclick="openCartModal()" class="relative hidden md:block">
                 <img width="36" height="36" src="https://img.icons8.com/emoji/48/shopping-cart-emoji.png" alt="cart" />
 
-                <!-- Cart Count -->
+                <!-- Cart -->
                 <span id="cartCount"
                     class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs px-2 rounded-full">
                     0
@@ -47,31 +46,19 @@
         </div>
 
         <!-- Mobile Menu -->
-         <!-- Mobile Menu -->
-<div id="mobileMenu" class="hidden flex-col md:hidden bg-white shadow p-4 absolute top-full right-0 w-48 rounded">
-  <a href="#" onclick="showHome(); toggleMenu()"
-     class="block py-2 px-4 hover:bg-gray-100">Home</a>
-  <a href="#" onclick="showProducts(); toggleMenu()"
-     class="block py-2 px-4 hover:bg-gray-100">Products</a>
-  <a href="#" onclick="toggleMenu()"
-     class="block py-2 px-4 hover:bg-gray-100">About</a>
-  <a href="#" onclick="toggleMenu()"
-     class="block py-2 px-4 hover:bg-gray-100">Contact</a>
-</div>
-
-        <!-- <div id="mobileMenu" class="hidden md:hidden bg-white px-6 pb-4 space-y-3">
-            <a href="index.html" class="block font-medium hover:text-indigo-600">Home</a>
-            <a href="#products" class="block font-medium hover:text-indigo-600">Products</a>
-            <a href="#" class="block font-medium hover:text-indigo-600">About</a>
-            <a href="#" class="block font-medium hover:text-indigo-600">Contact</a>
-        </div> -->
+        <div id="mobileMenu"
+            class="hidden flex-col md:hidden bg-white shadow p-4 absolute top-full right-0 w-48 rounded">
+            <a href="#" onclick="showHome(); toggleMenu()" class="block py-2 px-4 hover:bg-gray-100">Home</a>
+            <a href="#" onclick="showProducts(); toggleMenu()" class="block py-2 px-4 hover:bg-gray-100">Products</a>
+            <a href="#" onclick="toggleMenu()" class="block py-2 px-4 hover:bg-gray-100">About</a>
+            <a href="#" onclick="toggleMenu()" class="block py-2 px-4 hover:bg-gray-100">Contact</a>
+        </div>
     </header>
 
-    <!-- ================= HERO ================= -->
+    <!-- HERO -->
     <section id="hero" class="relative h-[60vh] md:h-[75vh]">
         <img src="Assets/banner-image.png" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/50"></div>
-
         <div class="relative z-10 h-full flex items-center max-w-7xl mx-auto px-6">
             <div class="text-white max-w-xl">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Best Collection For You</h2>
@@ -82,7 +69,7 @@
         </div>
     </section>
 
-    <!-- ================= WHY CHOOSE US ================= -->
+    <!-- WHY CHOOSE US -->
     <section id="features" class="bg-white py-20">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-2">Why Choose Us</h2>
@@ -116,14 +103,14 @@
         </div>
     </section>
 
-    <!-- ================= PRODUCTS ================= -->
+    <!-- PRODUCTS -->
     <section id="productSection" id="products" class="max-w-7xl mx-auto px-6 pb-20">
         <h2 class="text-3xl font-bold mb-8 hidden md:block">Trending Now</h2>
         <h2 class="text-3xl font-bold mb-8 text-center md:hidden">Our Products</h2>
         <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
     </section>
 
-    <!-- ================= MODAL ================= -->
+    <!-- MODAL -->
     <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center">
         <div class="bg-white p-6 rounded max-w-md w-full">
             <h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
@@ -134,7 +121,7 @@
         </div>
     </div>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
     <footer class="bg-[#1f2937] text-gray-400 pt-16 pb-6">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -165,7 +152,6 @@
                         </button>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">

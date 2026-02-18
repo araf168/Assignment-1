@@ -9,13 +9,13 @@ const modalPrice = document.getElementById("modalPrice");
 let selectedProduct = null;
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-/* ================= CART COUNT ================= */
+/* CART COUNT */
 function updateCartCount() {
   cartCount.innerText = cart.length;
 }
 updateCartCount();
 
-/* ================= FETCH PRODUCTS ================= */
+/* FETCH PRODUCTS */
 async function loadProducts() {
   productList.innerHTML = `<p class="text-center col-span-3">Loading...</p>`;
 
@@ -30,7 +30,7 @@ async function loadProducts() {
   }
 }
 
-/* ================= RENDER PRODUCTS ================= */
+/* RENDER PRODUCTS */
 function renderProducts(products) {
   productList.innerHTML = "";
 
@@ -62,7 +62,7 @@ function renderProducts(products) {
   });
 }
 
-/* ================= MODAL ================= */
+/* MODAL */
 async function openModal(id) {
   const res = await fetch(`https://fakestoreapi.com/products/${id}`);
   selectedProduct = await res.json();
@@ -80,7 +80,7 @@ function closeModal() {
   modal.classList.remove("flex");
 }
 
-/* ================= ADD TO CART ================= */
+/* ADD TO CART */
 function addToCart() {
   cart.push(selectedProduct);
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -98,17 +98,17 @@ function addToCartDirect(id) {
     });
 }
 
-/* ================= MOBILE MENU ================= */
+/* MOBILE MENU */
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
   menu.classList.toggle("hidden");
 }
 
-/* ================= INIT ================= */
+/* INIT */
 loadProducts();
 updateCartCount();
 
-/* ================= SHOW / HIDE SECTIONS ================= */
+/* SHOW / HIDE SECTIONS */
 function showProducts() {
   document.getElementById("hero").classList.add("hidden");
   document.getElementById("features").classList.add("hidden");
@@ -120,7 +120,7 @@ function showHome() {
   document.getElementById("features").classList.remove("hidden");
   document.getElementById("productSection").classList.remove("hidden");
 }
-/* ================= MOBILE MENU ================= */
+/* MOBILE MENU */
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
   menu.classList.toggle("hidden");
